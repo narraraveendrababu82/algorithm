@@ -1,4 +1,4 @@
-Bubble Sort Algorithm
+# **Bubble Sort Algorithm**
 
 * Traverse from left and compare adjacent elements and the higher one is placed at right side.
 * In this way, the largest element is moved to the rightmost end at first.
@@ -20,7 +20,7 @@ Disadvantages of Bubble Sort:
 * Bubble sort has a time complexity of O(N2) which makes it very slow for large data sets.
 * Bubble sort is a comparison-based sorting algorithm, which means that it requires a comparison operator to determine the relative order of elements in the input data set. It can limit the efficiency of the algorithm in certain cases.
 
-Some FAQs related to Bubble Sort:
+FAQs related to Bubble Sort:
 
 What is the Boundary Case for Bubble sort?
 
@@ -40,7 +40,7 @@ Due to its simplicity, bubble sort is often used to introduce the concept of a s
 
 Example: It is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to the x-axis), and with incrementing y their order changes (two elements are swapped) only at intersections of two lines.
 
-Selection Sort Algorithm
+# **Selection Sort Algorithm**
 
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
 
@@ -65,7 +65,7 @@ Disadvantages of the Selection Sort Algorithm
 * Does not work well on large datasets.
 * Does not preserve the relative order of items with equal keys which means it is not stable.
 
-Frequently Asked Questions on Selection Sort
+FAQs related to Selection Sort
 
 Q1. Is Selection Sort Algorithm stable?
 
