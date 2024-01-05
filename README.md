@@ -1,4 +1,4 @@
-Bubble Sort Algorithm
+# **Bubble Sort Algorithm**
 
 * Traverse from left and compare adjacent elements and the higher one is placed at right side.
 * In this way, the largest element is moved to the rightmost end at first.
@@ -40,7 +40,7 @@ Due to its simplicity, bubble sort is often used to introduce the concept of a s
 
 Example: It is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to the x-axis), and with incrementing y their order changes (two elements are swapped) only at intersections of two lines.
 
-Selection Sort Algorithm
+# **Selection Sort Algorithm**
 
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
 
