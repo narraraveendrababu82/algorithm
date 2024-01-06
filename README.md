@@ -1,76 +1,56 @@
 # **Bubble Sort Algorithm**
 
-* Traverse from left and compare adjacent elements and the higher one is placed at right side.
-* In this way, the largest element is moved to the rightmost end at first.
-* This process is then continued to find the second largest and place it and so on until the data is sorted.
+* This is one of the most straightforward sorting algorithms; the core idea is to keep swapping adjacent elements of an array if they are in an incorrect order until the collection is sorted.
+* As sorting is performed by swapping, we can say it performs in-place sorting.
+* If two elements have same values, resulting data will have their order preserved – which makes it a stable sort.
 
-Complexity Analysis of Bubble Sort:
+Implementation
 
-* Time Complexity: O(N2)
+we iterate through it while comparing adjacent elements, and swapping them if necessary. For an array of size n, we perform n-1 such iterations.
+
+Complexity:
+
+* Time Complexity: O(n^2) as there are two nested loops.
 * Auxiliary Space: O(1)
-
-Advantages of Bubble Sort:
-
-* Bubble sort is easy to understand and implement.
-* It does not require any additional memory space.
-* It is a stable sorting algorithm, meaning that elements with the same key value maintain their relative order in the sorted output.
-
-Disadvantages of Bubble Sort:
-
-* Bubble sort has a time complexity of O(N2) which makes it very slow for large data sets.
-* Bubble sort is a comparison-based sorting algorithm, which means that it requires a comparison operator to determine the relative order of elements in the input data set. It can limit the efficiency of the algorithm in certain cases.
-
-FAQs related to Bubble Sort:
-
-What is the Boundary Case for Bubble sort?
-
-Bubble sort takes minimum time (Order of n) when elements are already sorted. Hence it is best to check if the array is already sorted or not beforehand, to avoid O(N2) time complexity.
-
-Does sorting happen in place in Bubble sort?
-
-Yes, Bubble sort performs the swapping of adjacent pairs without the use of any major data structure. Hence Bubble sort algorithm is an in-place algorithm.
-
-Is the Bubble sort algorithm stable?
-
-Yes, the bubble sort algorithm is stable.
-
-Where is the Bubble sort algorithm used?
-
-Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm. In computer graphics, it is popular for its capability to detect a tiny error (like a swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n).
-
-Example: It is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to the x-axis), and with incrementing y their order changes (two elements are swapped) only at intersections of two lines.
 
 # **Selection Sort Algorithm**
 
-Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
+* Selection Sort begins with the element in the 1st position of an unsorted array and scans through subsequent elements to find the smallest element. Once found, the smallest element is swapped with the element in the 1st position.
+* Then moves on to the element in the 2nd position and scans through subsequent elements to find the index of the 2nd smallest element. Once found, the second smallest element is swapped with the element in the 2nd position.
+* This process goes on until we reach the n-1th element of the array, which puts the n-1th smallest element in the n-1th position. The last element automatically falls in place, in the n-1th iteration, thereby sorting the array.
+* The largest element instead of the smallest element to sort the array in descending order.
 
-Complexity Analysis of Selection Sort
+Complexity:
 
-Time Complexity: The time complexity of Selection Sort is O(N2) as there are two nested loops:
+Time Complexity: O(n^2) as there are two nested loops.
 
-* One loop to select an element of Array one by one = O(N)
-* Another loop to compare that element with every other Array element = O(N)
-* Therefore overall complexity = O(N) * O(N) = O(N*N) = O(N2)
+* One loop to select an element of Array one by one = O(n)
+* Another loop to compare that element with every other Array element = O(n)
+* Therefore overall complexity = O(n) * O(n) = O(n*n) = O(n^2)
 
 Auxiliary Space: O(1) as the only extra memory used is for temporary variables while swapping two values in Array. The selection sort never makes more than O(N) swaps and can be useful when memory writing is costly.
 
-Advantages of Selection Sort Algorithm
+# **Merge Sort Algorithm**
 
-* Simple and easy to understand.
-* Works well with small datasets.
+Merge sort is a “divide and conquer” algorithm, wherein we first divide the problem into subproblems. When the solutions for the subproblems are ready, we combine them together to get the final solution to the problem.
 
-Disadvantages of the Selection Sort Algorithm
+We can easily implement this algorithm using recursion, as we deal with the subproblems rather than the main problem.
 
-* Selection sort has a time complexity of O(n^2) in the worst and average case.
-* Does not work well on large datasets.
-* Does not preserve the relative order of items with equal keys which means it is not stable.
+* Divide: In this step, we divide the input array into 2 halves, the pivot being the midpoint of the array. This step is carried out recursively for all the half arrays until there are no more half arrays to divide.
+* Conquer: In this step, we sort and merge the divided arrays from bottom to top and get the sorted array.
 
-FAQs related to Selection Sort
+Implementation 
 
-Q1. Is Selection Sort Algorithm stable?
+* we’ll write a mergeSort function that takes in the input array and its length as the parameters. This will be a recursive function, so we need the base and the recursive conditions.
+* The base condition checks if the array length is 1 and it will just return. For the rest of the cases, the recursive call will be executed.
+* For the recursive case, we get the middle index and create two temporary arrays, l[] and r[]. Then we call the mergeSort function recursively for both the sub-arrays.
+* Next, we call the merge function, which takes in the input and both the sub-arrays, as well as the start and end indices of both the sub arrays.
+* The merge function compares the elements of both sub-arrays one by one and places the smaller element into the input array.
+* When we reach the end of one of the sub-arrays, the rest of the elements from the other array are copied into the input array, thereby giving us the final sorted array.
 
-The default implementation of the Selection Sort Algorithm is not stable. However, it can be made stable. Please see the stable Selection Sort for details.
+Complexity
 
-Q2. Is Selection Sort Algorithm in-place?
+Time Complexity -> T(n) = 2T(n/2) + O(n) - 2times half halves + merge
+                    O(nlogn) - worst, average and best
 
-Yes, Selection Sort Algorithm is an in-place algorithm, as it does not require extra space.
+Space Complexity -> O(n) - creating temporary array for every recursive call. 

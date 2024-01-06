@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class BubbleSort {
 
@@ -21,16 +22,16 @@ public class BubbleSort {
     }
 
     public static void bubbleSort(int[] a) {
-        int temp=0;
-        for (int i = 0; i < a.length-1; i++) {
-            for (int j = 0; j < a.length-i-1; j++) {
-                if (a[j] > a[j+1]) {
-                    temp = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
-                }
-            }
-        }
+        int n = a.length;
+        IntStream.range(0, n-1)
+                .flatMap(i -> IntStream.range(1, n-i))
+                .forEach(j -> {
+                    if(a[j-1] > a[j]) {
+                        int temp = a[j];
+                        a[j] = a[j-1];
+                        a[j-1] = temp;
+                    }
+                });
     }
 
 }
