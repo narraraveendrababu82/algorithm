@@ -1,3 +1,5 @@
+package com.sort;
+
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
