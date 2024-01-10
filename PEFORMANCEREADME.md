@@ -22,15 +22,22 @@
 
 
     Inefficient Code
+
     Infinite Loops
+    
     Concurrency Issue
+    
     Thread Pool Configurations
 
 
 4. **System Spikes**
 
     
+    
     System Process/Memory Usage
+    
     Disk Space
+    
     Network Bottlenecks
+    
     Continous Log Monitoring
